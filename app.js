@@ -103,9 +103,31 @@ const hungry = ["Thanks", "A", "Lot", "Now", "I", "Am", "Hungry"]
 //===========================
 // 15b. Using a loop, add each item from the hungry array as span elements/tags to the bottom of the document/webpage
 //===========================
+// Makes more sense to use this code because it is more concise, the design works better
 for (word of hungry) {
-    let yum = document.createElement(`span`);
+    let food = document.createElement(`span`);
     yum.innerText = `${word} `;
-    document.body.append(yum);
+    document.body.append(food);
 }
+
+//OR can use join to complete
+// const end = document.querySelector(`body`)
+
+// for (g of hungry){
+//     const span = document.createElement(`span`)
+//     span.innerHTML = `${g}`;
+//     end.append(span);
+// }
+
+// OR can use join like this
+
+// const veryhungry = document.createElement(`span`);
+
+// for (u of hungry.join(" ")) {
+//     const foodie = document.createElement(`span`);
+   
+//     foodie.innerText = u;
+
+//     start.append(foodie);
+// }
 //===========================
