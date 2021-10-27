@@ -121,7 +121,7 @@ for (word of hungry) {
 
 // OR can use join like this
 
-// const foodie = document.createElement(`span`);
+
 
 // for (u of hungry.join(" ")) {
 //     const foodie = document.createElement(`span`);
