@@ -15,14 +15,18 @@ const centered = document.getElementsByClassName(`center`);
 // 4. Using querySelector, select the first div with the info for Gino's East inside of it and set it to a const variable called ginosEast.
 //===========================
 const ginosEast = document.querySelector(`div`);
+// OR
+// const ginosEast = document.querySelector(`div`);
 //===========================
 // 5. Using querySelectorAll, select all the p elements and set them to a const variable called pTags
 //===========================
 const pTags = document.querySelectorAll(`p`);
+console.dir(pTags);
 //===========================
 // 6a. Select the h1 (You can use whichever selector you want) and set it to a const variable called h1.
 //===========================
 const h1 = document.querySelector(`h1`);
+console.dir(h1);
 //===========================
 // 6b. Use inner text to change the text to say "Matt's Favorite Places To Eat In Sweet Home Chicago!"
 //===========================
@@ -31,6 +35,9 @@ h1.innerText = "Matt's Favorite Places To Eat In Sweet Home Chicago!";
 // 7a. Select the div with the id of "others" and set it to a const variable called others.
 //===========================
 const others = document.querySelector("#others");
+// OR
+// const others = document.getElementById(`others`);
+console.dir(others);
 //===========================
 // 7b. Use innerHTML to change the HTML to an h3 with the text of "Other favorites" inside of it
 //===========================
@@ -41,15 +48,26 @@ console.log(contentsP.innerHTML);
 //===========================
 const aTag = document.querySelector(`a`);
 console.dir(aTag);
+// OR
+// const aTag = document.getElementsByTagName(`a`);
+//console.dir(aTag);
 //===========================
 // 8b. Change the href attribute to the following link "https://www.choosechicago.com/articles/food-drink/5-classic-chicago-foods/"
 //===========================
-aTag.innerHTML = 'https://www.choosechicago.com/articles/food-drink/5-classic-chicago-foods/';
+aTag.innerHTML = `https://www.choosechicago.com/articles/food-drink/5-classic-chicago-foods/`;
 console.log(aTag.innerHTML);
 //===========================
 // 9. Using classList, ADD both the "background" and "text-color" classes to the h1 (NOTE: You can use the h1 variable you created earlier)
 //===========================
 h1.classList.add(`background`, `text-color`)
+
+//OR
+/*const h1 = document.getElementsByTagName(`h1`);
+console.dir(h1);
+console.dir(h1[0]);
+
+h1[0].classList.add(`background`, `text-color`);
+*/
 //===========================
 // 10. Using classList, REMOVE the "background" class from the h1 (NOTE: You can use the h1 variable you created earlier)
 //===========================
@@ -65,10 +83,10 @@ h4.innerText = "CHICAGO: A great place to eat!";
 //===========================
 // 11c. Using prepend, add the h4 to the start of the webpage/document (NOTE: You need to select the body element before you do this)
 //===========================
-document.body.prepend(h4);
+document.bodystart.prepend(h4);
 //or
-const start = document.querySelector(`body`);
-start.prepend(h4);
+const bodystart = document.querySelector(`body`);
+bodystart.prepend(h4);
 //===========================
 // 12a. Using createElement, create an h5 element and set it to a const variable called h5
 //===========================
@@ -93,8 +111,8 @@ const divs = document.querySelectorAll(`div`);
 //===========================
 // 14b. Using classList, TOGGLE the "background" class on for all the divs (NOTE: You will need a loop to do this)
 //===========================
-for (div of divs) {
-    div.classList.toggle(`background`);
+for (d of divs) {
+    d.classList.toggle(`background`);
 }
 //===========================
 // 15a. Create an array called hungry with the following string values "Thanks", "A", "Lot", "Now", "I", "Am", "Hungry"
@@ -104,12 +122,18 @@ const hungry = ["Thanks", "A", "Lot", "Now", "I", "Am", "Hungry"]
 // 15b. Using a loop, add each item from the hungry array as span elements/tags to the bottom of the document/webpage
 //===========================
 // Makes more sense to use this code because it is more concise, the design works better
-for (word of hungry) {
-    let food = document.createElement(`span`);
-    yum.innerText = `${word} `;
-    document.body.append(food);
-}
+// for (maybe of hungry) {
+//     let food = document.createElement(`span`);
+//     food.innerText = `${maybe} `;
+//     document.body.append(food);
+// }
 
+//OR FOR Loop
+for (i = 0; i < hungry.length; i ++){
+    const span = document.createElement(`span`);
+    span.innerText = hungry[i];
+    end.querySelector(`body`).append(span);
+}
 //OR can use join to complete
 // const end = document.querySelector(`body`)
 
